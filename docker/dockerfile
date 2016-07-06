@@ -1,0 +1,6 @@
+FROM scratch
+ADD Ldap2Pop3 /
+ADD conf.json /
+ADD ca-certificates.crt /etc/ssl/certs/
+CMD ["/Ldap2Pop3"]
+EXPOSE 10389
