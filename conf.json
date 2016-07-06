@@ -1,0 +1,5 @@
+{
+    "ListenAddr":"0.0.0.0:10389" ,
+    "Pop3ServerTlsAddr": "127.0.0.1:995",   //Pop3 server must be enabled SSL
+	"LookupUser":"Root"						//This user will always pass the ldap authentication
+}
