@@ -117,7 +117,7 @@ func handleBind(w ldap.ResponseWriter, m *ldap.Message) {
 		uName := r.Name()
 
 		log.Println("uName:", uName)
-		if uName == c.LookupUser {
+		if string(uName) == c.LookupUser {
 			w.Write(res)
 			return
 		}
