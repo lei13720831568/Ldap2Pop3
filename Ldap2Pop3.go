@@ -117,7 +117,7 @@ func handleBind(w ldap.ResponseWriter, m *ldap.Message) {
 		uName := r.Name()
 
 		log.Println("uName:", uName)
-		if uName == c.LookupUser {
+		if string(uName) == c.LookupUser {
 			w.Write(res)
 			return
 		}
@@ -132,6 +132,7 @@ func handleBind(w ldap.ResponseWriter, m *ldap.Message) {
 			if err != nil {
 				res.SetResultCode(ldap.LDAPResultInvalidCredentials)
 				res.SetDiagnosticMessage("invalid credentials," + err.Error())
+				log.Println("invalid credentials," + err.Error())
 			}
 		}
 
