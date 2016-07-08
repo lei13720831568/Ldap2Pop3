@@ -40,6 +40,6 @@ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
 cp Ldap2Pop3 ./docker/Ldap2Pop3
 cp conf.json ./docker/conf.json
 cd ./docker
-docker build -t ldap2pop3 .
+docker build -t ldap2pop3 ./docker/
 docker run -d -p 10389:10389 --name ldap2pop3 ldap2pop3
 ```
